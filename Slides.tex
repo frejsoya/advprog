@@ -62,6 +62,9 @@ The monad laws consist of 3 invariants, that any monad must adhere to:
  % &ToDO && \text{3: Associativity} 
 \end{align*}
 \end{frame}
+\begin{frame}
+How to ensure a monad is correct \ldots ?
+\end{frame}
 %\subsection{Using the invariants}
 \begin{frame}[fragile]
 \frametitle{The Error Monad}
@@ -112,6 +115,9 @@ By case analysis on E: Suc a, Err s
 %\end{frame}
 
 \section{Using the Monad Laws}
+\begin{frame}
+Why would I care to follow the monad laws\ldots ?
+\end{frame}
 \subsection{} 
 \begin{frame}[fragile]
 \frametitle{Monad syntactic sugar in haskell}
@@ -228,8 +234,8 @@ do { x <- read
 \textbf{By Associativity:}
 \begin{lstlisting}
 
-m >>= ((\x -> f x) 
-  >>=  (\y -> g y))
+read >>= ((\x -> f x) 
+     >>= (\y -> write y))
 \end{lstlisting}
 }
   \end{column}
